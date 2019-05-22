@@ -1,0 +1,27 @@
+server:
+  port: 8514
+  session-timeout: 30
+  servlet:
+    context-path: /k8s
+    multipart:
+      max-file-size: 5mb
+      max-request-size: 10mb
+  undertow:
+    io-threads: 8
+    worker-threads: 256
+    buffer-size: 1024
+    direct-buffers: true
+
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true
+
+app:
+  k8s:
+    greeting: WELCOME TO THE WORLD!
